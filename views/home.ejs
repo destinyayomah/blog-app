@@ -1,0 +1,24 @@
+<%- include('partials/header'); -%>
+
+    <h1>
+        <%= route.name %>
+    </h1>
+    <p>
+        <%= route.content %>
+    </p>
+
+    <p>
+        <% posts.forEach((post) => { %>
+            <h1>
+                <%= post.title; %>
+            </h1>
+
+            <p>
+                <%= post.body.substr(0, 100)+'...'  %>
+                    <%- '<a href="/posts/'+post._id+'">Read More</a>' %>
+            </p>
+
+            <% }); %>
+    </p>
+
+    <%- include('partials/footer'); -%>
